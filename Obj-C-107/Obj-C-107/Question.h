@@ -17,10 +17,8 @@
 @property (nonatomic) NSInteger rightValue;
 @property (nonatomic) NSInteger leftValue;
 
-- (void) printQuestion;
-- (BOOL) compareAnswerWithInput: (NSInteger) input;
 - (NSInteger)getAnswer;
-- (NSTimeInterval)answerTime;
+- (NSTimeInterval)timeToAnswer;
 - (void)generateQuestion;
 
 @end

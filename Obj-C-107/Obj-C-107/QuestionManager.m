@@ -20,7 +20,19 @@
 }
 
 - (NSString *)timeOutput {
-    return @"total time: 60s, avarage time: 10s";
+    float totalTime = 0;
+    float avarageTime = 0;
+    
+    for (int i = 0; i < _questions.count; i++) {
+        totalTime = totalTime + [_questions[i] timeToAnswer];
+    }
+    
+    avarageTime = totalTime / _questions.count;
+    NSMutableString *str = [[NSMutableString alloc] initWithString:@"total time: "];
+    [str appendFormat:@"%.1fs, ", totalTime];
+    [str appendFormat:@"avarage time:%.1fs", avarageTime];
+    NSString *result;
+    return result = str;
 }
 
 @end

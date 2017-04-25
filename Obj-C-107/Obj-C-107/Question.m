@@ -14,30 +14,15 @@
 {
     self = [super init];
     if (self) {
-        NSInteger rand = arc4random_uniform(91) + 10;
-        NSInteger rand2 = arc4random_uniform(91) + 10;
+        _leftValue = arc4random_uniform(91) + 10;
+        _rightValue = arc4random_uniform(91) + 10;
         
-        _answer = rand + rand2;
-        _question = [NSString stringWithFormat:@"%ld + %ld = ?", rand, rand2];
+        //_answer = _leftValue + _rightValue;
+        //_question = [NSString stringWithFormat:@"%ld + %ld = ?", _leftValue, _rightValue];
         _startTime = [NSDate date];
         
     }
     return self;
-}
-
-- (void) printQuestion {
-    NSLog(@"%@", _question);
-}
-
-- (BOOL) compareAnswerWithInput: (NSInteger) input {
-    //NSLog(@"Answer: %ld, User Input: %ld", _answer, input);
-    if(_answer == input) {
-        NSLog(@"Right!");
-        return YES;
-    } else {
-        NSLog(@"Wrong!");
-        return NO;
-    }
 }
 
 - (NSInteger)getAnswer {
@@ -45,12 +30,13 @@
     return _answer;
 }
 
-- (NSTimeInterval)answerTime {
+- (NSTimeInterval)timeToAnswer {
     return [_endTime timeIntervalSinceDate:_startTime];
 }
 
 - (void)generateQuestion {
-    
+    // Nothing to do
+    // See SubtractionQuestion.m
 }
 
 @end

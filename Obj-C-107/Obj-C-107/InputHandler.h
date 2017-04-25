@@ -13,7 +13,6 @@
 @property NSString *userInput;
 
 - (NSString *) getUserInput;
-- (NSInteger) convertToInt;
 - (BOOL) quitCommandWithInput: (NSString *) input;
 
 @end

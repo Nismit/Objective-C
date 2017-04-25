@@ -29,14 +29,12 @@
 }
 
 - (void) printScore {
-    float failure = 0;
+    float rate = 0;
     
-    if(_wrong != 0) {
-        failure =  _wrong / (float)(_correct + _wrong);
-        //NSLog(@"%ld", (_correct + _wrong));
-        //NSLog(@"%f", failure);
+    if(_correct != 0) {
+        rate =  _correct / (float)(_correct + _wrong);
     }
-    NSLog(@"score: %ld right, %ld wrong ---- %d%@", _correct, _wrong, (int)(failure * 100), @"%");
+    NSLog(@"score: %ld right, %ld wrong ---- %d%@", _correct, _wrong, (int)(rate * 100), @"%");
 }
 
 @end

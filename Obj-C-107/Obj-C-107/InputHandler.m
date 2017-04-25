@@ -10,26 +10,12 @@
 
 @implementation InputHandler
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        char inputChars[256];
-        fgets(inputChars, 255, stdin);
-        NSString *inputString = [NSString stringWithUTF8String:inputChars];
-        //_userInput = [inputString intValue];
-        _userInput = inputString;
-        //NSLog(@"%ld", _userInput);
-    }
-    return self;
-}
-
 - (NSString *) getUserInput {
+    char inputChars[256];
+    fgets(inputChars, 255, stdin);
+    NSString *inputString = [NSString stringWithUTF8String:inputChars];
+    _userInput = [inputString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     return _userInput;
-}
-
-- (NSInteger) convertToInt {
-    return [_userInput intValue];
 }
 
 - (BOOL) quitCommandWithInput: (NSString *) input {

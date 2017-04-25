@@ -11,6 +11,7 @@
 #import "InputHandler.h"
 #import "Question.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 
 int main(int argc, const char * argv[]) {
@@ -23,10 +24,26 @@ int main(int argc, const char * argv[]) {
         InputHandler *inputHander = [InputHandler new];
         
         QuestionManager *questionManager = [QuestionManager new];
-        //QuestionFactory *questionFactory = [QuestionFactory new];
+        QuestionFactory *questionFactory = [QuestionFactory new];
         
         while (gameOn) {
-            // do something
+            id instance = [questionFactory generateRandomQuestion];
+            [questionManager.questions addObject:instance];
+            NSString *input = [inputHander getUserInput];
+            if ([input compare:@"quit"] == NSOrderedSame) {
+                gameOn = NO;
+            } else {
+                if([input intValue] == [instance getAnswer]) {
+                    NSLog(@"%@", right);
+                    [scoreKeeper countCorrect];
+                } else {
+                    NSLog(@"%@", wrong);
+                    [scoreKeeper countWrong];
+                }
+            }
+            
+            [scoreKeeper printScore];
+            NSLog(@"%@", [questionManager timeOutput]);
         }
         
     }
