@@ -10,4 +10,23 @@
 
 @implementation Prescription
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _prescriptionList = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (void)addPrescriptionWithInformation: (NSString *)information {
+    if (information != nil) {
+        [_prescriptionList addObject:information];
+        NSLog(@"Added the information");
+    } else {
+        NSLog(@"Cannot add the information");
+    }
+    
+}
+
 @end

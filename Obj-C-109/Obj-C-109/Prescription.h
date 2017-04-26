@@ -10,4 +10,8 @@
 
 @interface Prescription : NSObject
 
+@property NSMutableArray *prescriptionList;
+
+- (void)addPrescriptionWithInformation: (NSString *)information;
+
 @end

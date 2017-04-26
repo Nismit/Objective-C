@@ -10,4 +10,15 @@
 
 @implementation Patient
 
+- (instancetype)initWithName: (NSString *)name age: (NSInteger) age
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+        _age = age;
+        _healthCard = NO;
+    }
+    return self;
+}
+
 @end

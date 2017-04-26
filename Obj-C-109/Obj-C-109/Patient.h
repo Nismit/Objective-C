@@ -10,4 +10,10 @@
 
 @interface Patient : NSObject
 
+@property NSString *name;
+@property NSInteger age;
+@property BOOL healthCard;
+
+- (instancetype)initWithName: (NSString *)name age: (NSInteger) age;
+
 @end

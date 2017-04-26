@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Patient.h"
 
 @interface Doctor : NSObject
+
+@property NSString *name;
+@property NSString *specialization;
+@property NSMutableArray *patientList;
+
+- (instancetype)initWithName: (NSString *)name specialization: (NSString *) specialization;
+- (void)acceptPatientVaildHealthCard: (Patient *)patient;
+- (NSString *)requestMedication: (Patient *) patient;
 
 @end
