@@ -17,7 +17,7 @@
 
 @implementation FoodTruck
 
--(instancetype)initWithName:(NSString *)pun andFoodType:(NSString *)foodType {
+- (instancetype)initWithName:(NSString *)pun andFoodType:(NSString *)foodType {
     self = [super init];
     if (self) {
         _name = pun;
@@ -26,10 +26,11 @@
     return self;
 }
 
-
--(void)serve:(int)orders {
+- (void)serve:(int)orders {
     
     double price = [self.delegate foodTruck:self priceForFood:self.foodType];
+    
+    //[self.delegate customMethod];
     
     NSLog(@"Welcome to %@", self.name);
     NSLog(@"We serve %@ for $%0.2f", self.foodType, price);
@@ -38,8 +39,10 @@
     self.earnings += orders * price;
 }
 
--(void)cashOut {
+- (void)cashOut {
     NSLog(@"%@ earned %0.2f today!", self.name, self.earnings);
 }
+
+
 
 @end

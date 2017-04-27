@@ -11,7 +11,8 @@
 
 @protocol FoodTruckDelegate <NSObject>
 
--(double)foodTruck:(FoodTruck *)truck priceForFood:(NSString *)food;
+- (double)foodTruck:(FoodTruck *)truck priceForFood:(NSString *)food;
+- (void)customMethod;
 
 @end
 
@@ -20,9 +21,9 @@
 
 @property (nonatomic, weak) id<FoodTruckDelegate> delegate;
 
--(instancetype)initWithName:(NSString *)pun andFoodType:(NSString *)foodType;
+- (instancetype)initWithName:(NSString *)pun andFoodType:(NSString *)foodType;
 
--(void)serve:(int)orders;
--(void)cashOut;
+- (void)serve:(int)orders;
+- (void)cashOut;
 
 @end

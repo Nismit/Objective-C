@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FoodTruck.h"
 
-@interface Cook : NSObject
+@interface Cook : NSObject<FoodTruckDelegate>
+
+- (double)foodTruck:(FoodTruck *)truck priceForFood:(NSString *)food;
+- (void)customMethod;
 
 @end

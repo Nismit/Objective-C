@@ -8,6 +8,17 @@
 
 #import "Cook.h"
 
+
+
 @implementation Cook
+
+- (double)foodTruck:(FoodTruck *)truck priceForFood:(NSString *)food {
+    double a = 2.3;
+    return a;
+}
+
+- (void)customMethod {
+    NSLog(@"I AM COOK");
+}
 
 @end
