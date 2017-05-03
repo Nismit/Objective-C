@@ -39,6 +39,7 @@
         NSMutableString *str = [[NSMutableString alloc] init];
         [str appendFormat:@"Name:%@, ", patient.name];
         [str appendFormat:@"age:%ld, ", patient.age];
+        [str appendFormat:@"Symptom:%@, ", patient.symptom];
         result = str;
         return result;
     } else {

@@ -13,6 +13,8 @@
 @property NSString *name;
 @property NSInteger age;
 @property BOOL healthCard;
+@property NSString *symptom;
+
 
 - (instancetype)initWithName: (NSString *)name age: (NSInteger) age;
 

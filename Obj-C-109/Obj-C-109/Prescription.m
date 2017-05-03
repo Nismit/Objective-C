@@ -29,4 +29,10 @@
     
 }
 
+- (void)seePrescription {
+    for (int i = 0; i < _prescriptionList.count; i++) {
+        NSLog(@"%@", _prescriptionList[i]);
+    }
+}
+
 @end

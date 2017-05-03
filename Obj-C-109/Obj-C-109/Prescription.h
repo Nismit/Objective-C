@@ -13,5 +13,6 @@
 @property NSMutableArray *prescriptionList;
 
 - (void)addPrescriptionWithInformation: (NSString *)information;
+- (void)seePrescription;
 
 @end
