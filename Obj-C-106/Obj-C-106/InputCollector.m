@@ -11,9 +11,11 @@
 @implementation InputCollector
 
 - (void)printCommandList {
-    NSLog(@"What would you like to do next?");
     NSLog(@"new - Create a new contact");
     NSLog(@"list - List all contacts");
+    NSLog(@"show - Show a contact, must need a index number");
+    NSLog(@"find - Find in contacts, must need keyword");
+    NSLog(@"history - Show command history");
     NSLog(@"quit - Exit Application");
 }
 

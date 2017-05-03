@@ -15,12 +15,21 @@
     if (self) {
         _name = name;
         _email = email;
+        _additionalPhone = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
 - (NSString *)getInformation {
-    return [NSString stringWithFormat:@"%@(%@)", _name, _email];
+    NSMutableString *str = [[NSMutableString alloc] initWithFormat:@"%@(%@)", _name, _email];
+    for (id key in [_additionalPhone keyEnumerator]) {
+        [str appendFormat:@" %@, %@", key, [_additionalPhone valueForKey:key]];
+    }
+    return [NSString stringWithFormat:@"%@", str];
+}
+
+- (void)addDictionary:(NSArray *)input {
+    [_additionalPhone setObject:input[1] forKey:input[0]];
 }
 
 @end

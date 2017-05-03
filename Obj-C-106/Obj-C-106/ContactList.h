@@ -15,5 +15,9 @@
 
 - (void)addContact:(Contact *)newContact;
 - (void)printAllContact;
+- (void)showContactWithId:(NSInteger) index;
+- (void)findContact:(NSString *) key;
+- (BOOL)validationEmail:(NSString *)email;
+- (void)addDictionary:(NSInteger) idx val:(NSArray *)arr;
 
 @end

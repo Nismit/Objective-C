@@ -12,8 +12,10 @@
 
 @property NSString *name;
 @property NSString *email;
+@property NSMutableDictionary *additionalPhone;
 
 - (instancetype)initWithUsername:(NSString *)name Email:(NSString *)email;
 - (NSString *)getInformation;
+- (void)addDictionary:(NSArray *)input;
 
 @end
