@@ -11,7 +11,12 @@
 @implementation NSString (PigLatin)
 
 - (NSString *)stringByPigLatinization {
+    
+    //NSArray *words = [self componentsSeparatedByString:@" "];
     NSArray *vowel = @[@"a", @"e" ,@"i", @"o", @"u"];
+    //NSCharacterSet *vowels = [NSCharacterSet characterSetWithCharactersInString:@"aeiou"];
+    NSMutableArray *latinized = [NSMutableArray array];
+    
     
     for (int i = 0; i < self.length; i++) {
         NSString *temp = [self substringWithRange:NSMakeRange(i, 1)];
@@ -19,13 +24,12 @@
             if([temp compare:vowel[x]] == NSOrderedSame) {
                 NSMutableString *temp = [[NSMutableString alloc] initWithString:[self substringFromIndex:i]];
                 [temp appendFormat:@"%@ay", [[self substringWithRange:NSMakeRange(0, i)] lowercaseString]];
-                NSString *result = [[NSString stringWithString:temp] capitalizedString];
-                return result;
+                return [[NSString stringWithString:temp] capitalizedString];
             }
         }
     }
     
-    return self;
+    return [latinized componentsJoinedByString:@" "];
 }
 
 @end
